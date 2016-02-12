@@ -27,6 +27,33 @@ h1 {
   color: #333333;
 }
 
+/* The animation code */
+@keyframes example {
+    0%   {color: black;}
+    50%  {color: gray; padding-top:50px;}
+    100% {color: black;}
+}
+
+@keyframes flipper {
+    0%   {transform: rotate(0deg);}
+    25%  {transform: rotate(4deg);}
+    75%  {transform: rotate(-4deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/* The element to apply the animation to */
+h1 {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    height:100%;
+}
+
+.flipper {
+    animation-name: flipper;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
 
 </style>
 
@@ -36,7 +63,7 @@ h1 {
 
 <br>
 <br>
-<h1>Friday 12 Febuary, 2016</h1>
+<div class="flipper"> <h1>Friday 12 Febuary, 2016</h1> </div>
 
 </body>
 </html>
