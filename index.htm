@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+
+
+
+
+  var photo = $("#flipper") //or use jQuery's $("#photo")
+  function floatAnim(){
+    TweenMax.to(photo, 1.5, {ease: Power2.easeInOut, y:Math.random()*20});
+    TweenMax.to(photo, 1.5, {delay:1.5, ease: Power2.easeInOut, y:(Math.random()*20)+0, onComplete:floatAnim});
+  }
+  floatAnim()
+})
+</script>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,300,600,700,800);
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  background: #EEEEEE;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway';
+  font-weight: bold;
+  font-size: 2.4em;
+  color: #333333;
+}
+
+/* The animation code */
+@keyframes example {
+    0%   {color: black;}
+    0%  {color: gray;}
+    100% {color: black; font-size: 5.4em;}
+}
+
+/*@keyframes flipper {
+    0%   {transform: rotate(0deg);}
+    25%  {transform: rotate(4deg);}
+    75%  {transform: rotate(-4deg);}
+    100% {transform: rotate(0deg);}
+}*/
+
+/* The element to apply the animation to */
+h1 {
+    /*animation-name: example;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.000, -0.600, 0.315, 1.650);*/ /* custom */
+    height:100%;
+}
+
+#flipper {
+    /*animation-name: flipper;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    -webkit-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000); 
+    -moz-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000); 
+    -o-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000); 
+    transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);*/ /* easeInOutQuint */
+    text-align: center;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<br>
+<br>
+<div id="flipper"> <h1>Friday 22nd February, 2016 for real</h1> </div>
+
+</body>
+</html>
